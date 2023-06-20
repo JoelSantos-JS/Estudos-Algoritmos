@@ -8,9 +8,10 @@ public class Aula06 {
         vetor.adiciona("c");
         vetor.adiciona("d");
         vetor.adiciona("e");
+        vetor.adiciona("f");
 
         System.out.println(vetor);
-        vetor.adiciona(0, "A");
+        vetor.adiciona(2, "Aqui");
         System.out.println(vetor);
 
     }

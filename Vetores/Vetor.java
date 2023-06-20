@@ -14,6 +14,7 @@ public class Vetor {
     public Vetor(int capacidade) {
         this.elementos = new String[capacidade];
         this.tamanho = 0;
+
     }
 
     // public void addVetor(String elemento) {
