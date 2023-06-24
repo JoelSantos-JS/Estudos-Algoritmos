@@ -6,8 +6,8 @@ public class PrintList {
     private Node tail;
     private int length;
 
-    class Node {
-        int value;
+    public class Node {
+        public int value;
         Node next;
 
         Node(int value) {
@@ -151,4 +151,75 @@ public class PrintList {
 
     }
 
+    public boolean insert(int index, int value) {
+        if (index < 0 || index > length) {
+            return false;
+        }
+
+        if (index == 0) {
+            pretend(value);
+            return true;
+        }
+
+        if (index == length) {
+            append(value);
+            return true;
+
+        }
+
+        Node node = new Node(value);
+        Node temp = get(index - 1);
+        node.next = temp.next;
+
+        temp.next = node;
+        length++;
+        return true;
+
+    }
+
+    public Node delete(int index) {
+
+        if (index < 0 && index >= length) {
+            return null;
+        }
+
+        if (index == 0) {
+            return removeFirst();
+
+        }
+        if (index == length - 1) {
+            return removeLast();
+        }
+
+        Node temp = get(index - 1); // 2 = 2 -1 = 1
+        Node deletedNode = temp.next; // 1 > 2
+
+        temp.next = deletedNode.next;
+        temp.next = null;
+        length--;
+        return deletedNode;
+
+    }
+
+    public void reverse() {
+
+        // Novo primeiro
+        Node temp = head;
+
+        // Primeiro recebe o ultimo
+        head = tail;
+
+        // o ultimo recebe o novo primeiro
+        tail = temp;
+
+        Node next;
+        Node prev = null;
+
+        for (int i = 0; i < length; i++) {
+            next = temp.next;
+            temp.next = prev;
+            prev = temp;
+            temp = next;
+        }
+    }
 }

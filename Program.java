@@ -1,4 +1,5 @@
 import Pacote.PrintList;
+import Pacote.PrintList.Node;
 
 public class Program {
     public static void main(String[] args) {
@@ -10,11 +11,13 @@ public class Program {
         printList.append(3);
 
         printList.printList();
-
-        System.out.println(printList.get(2));
+        Node temp = printList.get(2);
+        System.out.println("Valor  " + temp.value);
 
         printList.set(3, 10);
         printList.printList();
 
+        printList.delete(3);
+        printList.printList();
     }
 }
