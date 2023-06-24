@@ -19,5 +19,10 @@ public class Program {
 
         printList.delete(3);
         printList.printList();
+        System.out.println("MMMMMMMMMMMMMMMMM");
+        printList.reverse();
+
+        printList.printList();
+
     }
 }

@@ -212,7 +212,7 @@ public class PrintList {
         // o ultimo recebe o novo primeiro
         tail = temp;
 
-        Node next;
+        Node next = temp.next;
         Node prev = null;
 
         for (int i = 0; i < length; i++) {
